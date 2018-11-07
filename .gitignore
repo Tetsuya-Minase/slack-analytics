@@ -1,0 +1,11 @@
+slack_data
+
+# file
+*.json
+*.txt
+
+# ide
+.idea/*
+
+# cache
+program/__pycache__/*
