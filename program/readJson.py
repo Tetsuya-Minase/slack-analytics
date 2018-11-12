@@ -4,12 +4,8 @@ import json
 import glob
 
 
-def read_json():
-    # file_list = glob.glob('../slack_data/development_of_loose/*')
-    # file_list = glob.glob('../slack_data/anime/*')
-    # file_list = glob.glob('../slack_data/general/*')
-    # file_list = glob.glob('../slack_data/adult/*')
-    file_list = glob.glob('../slack_data/gourmet/*')
+def read_json(filepath):
+    file_list = glob.glob(filepath)
 
     data_list = []
     for file in file_list:
@@ -28,11 +24,4 @@ def read_json():
             data_list.append(list_obj)
             f.close()
 
-    fw = open('gourmet.json', 'w')
-    # fw = open('adult.json', 'w')
-    # fw = open('general.json', 'w')
-    # fw = open('anime.json', 'w')
-    # fw = open('development_of_loose.json', 'w')
-    # json.dump関数でファイルに書き込む
-    json.dump(data_list, fw, ensure_ascii=False, indent=4)
     return data_list
